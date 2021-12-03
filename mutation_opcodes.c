@@ -60,7 +60,7 @@ void pop(cmd_t *cmd)
 
 	if (*h == NULL || h == NULL)
 	{
-		printf("L%d: can't pop an empty stack\n", cmd->line_number);
+	  fprintf(stderr, "L%d: can't pop an empty stack\n", cmd->line_number);
 		exit(EXIT_FAILURE);
 	}
 	current = *h;
@@ -80,7 +80,7 @@ void swap(cmd_t *cmd)
 
 	if (*h == NULL || h == NULL || (*h)->next == NULL)
 	{
-		printf("L%d: can't swap, stack too short\n", cmd->line_number);
+	  fprintf(stderr, "L%d: can't swap, stack too short\n", cmd->line_number);
 		exit(EXIT_FAILURE);
 	}
 	first = *h;

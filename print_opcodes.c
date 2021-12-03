@@ -32,7 +32,7 @@ void pint(cmd_t *cmd)
 
 	if (h == NULL)
 	{
-		printf("L%d: can't pint, stack empty\n", cmd->line_number);
+	  fprintf(stderr, "L%d: can't pint, stack empty\n", cmd->line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -51,13 +51,13 @@ void pchar(cmd_t *cmd)
 
 	if (h == NULL)
 	{
-		printf("L%d: can't pchar, stack empty\n", cmd->line_number);
+	  fprintf(stderr, "L%d: can't pchar, stack empty\n", cmd->line_number);
 		exit(EXIT_FAILURE);
 	}
 
 	if (h->n < 0 || h->n > 127)
 	{
-		printf("L%d: can't pchar, value out of range\n", cmd->
+	  fprintf(stderr, "L%d: can't pchar, value out of range\n", cmd->
 		       line_number);
 		exit(EXIT_FAILURE);
 	}

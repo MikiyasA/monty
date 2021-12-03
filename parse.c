@@ -34,7 +34,7 @@ int parse(char *line, cmd_t *cmd)
 		arg = strtok(NULL, delims);
 		if (arg == NULL)
 		{
-			printf("L%d: usage: push integer\n", ln);
+		  fprintf(stderr, "L%d: usage: push integer\n", ln);
 			exit(EXIT_FAILURE);
 		}
 		siz = strlen(arg);
@@ -44,7 +44,7 @@ int parse(char *line, cmd_t *cmd)
 				break;
 			if (arg[siz] > 57 || arg[siz] < 48)
 			{
-				printf("L%d: usage: push integer\n", ln);
+			  fprintf(stderr, "L%d: usage: push integer\n", ln);
 				exit(EXIT_FAILURE);
 			}
 		}

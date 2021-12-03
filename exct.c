@@ -38,6 +38,6 @@ void run(cmd_t *cmd)
 		i++;
 	}
 
-	printf("L%d: unknown instruction %s\n", cmd->line_number, cmd->op);
+	fprintf(stderr, "L%d: unknown instruction %s\n", cmd->line_number, cmd->op);
 	exit(EXIT_FAILURE);
 }

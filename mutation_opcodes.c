@@ -12,10 +12,10 @@ void push(cmd_t *cmd)
 
 	if (h == NULL)
 	{
-		printf("L%d: usage: push integer\n", cmd->line_number);
+	  fprintf(stderr, "L%d: usage: push integer\n", cmd->line_number);
 		exit(EXIT_FAILURE);
 	}
-	new = malloc(sizeof(stack_t))
+	new = malloc(sizeof(stack_t));
 	if ((new) == NULL)
 		exit(EXIT_FAILURE);
 	if (*cmd->mode == 1)

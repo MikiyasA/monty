@@ -16,24 +16,19 @@ int parse(char *line, cmd_t *cmd)
 
 	if (line == NULL)
 		return (0);
-
 	op = strtok(line, delims);
-
 	if (op == NULL || op[0] == '#')
 		return (0);
-
 	if (strcmp(op, "stack") == 0)
 	{
 		*cmd->mode = 0;
 		return (0);
 	}
-
 	if (strcmp(op, "queue") == 0)
 	{
 		*cmd->mode = 1;
 		return (0);
 	}
-
 	if (strcmp(op, "push") == 0)
 	{
 		arg = strtok(NULL, delims);
@@ -58,6 +53,5 @@ int parse(char *line, cmd_t *cmd)
 		return (1);
 	}
 	cmd->op = op;
-
 	return (1);
 }

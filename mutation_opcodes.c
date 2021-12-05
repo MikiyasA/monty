@@ -13,15 +13,15 @@ void push(cmd_t *cmd)
 	if (h == NULL)
 	{
 	  fprintf(stderr, "L%d: usage: push integer\n", cmd->line_number);
-		exit(EXIT_FAILURE);
+	  exit(EXIT_FAILURE);
 	}
 	new = malloc(sizeof(stack_t));
 	if ((new) == NULL)
 		exit(EXIT_FAILURE);
 	if (*cmd->mode == 1)
 	{
-		new->n = cmd->arg;
-		new->next = NULL;
+	  new->n = cmd->arg;
+	  new->next = NULL;
 		new->prev = NULL;
 		if (*h == NULL)
 		{
@@ -61,7 +61,7 @@ void pop(cmd_t *cmd)
 	if (*h == NULL || h == NULL)
 	{
 	  fprintf(stderr, "L%d: can't pop an empty stack\n", cmd->line_number);
-		exit(EXIT_FAILURE);
+	  exit(EXIT_FAILURE);
 	}
 	current = *h;
 	*h = (*h)->next;
@@ -81,7 +81,7 @@ void swap(cmd_t *cmd)
 	if (*h == NULL || h == NULL || (*h)->next == NULL)
 	{
 	  fprintf(stderr, "L%d: can't swap, stack too short\n", cmd->line_number);
-		exit(EXIT_FAILURE);
+	  exit(EXIT_FAILURE);
 	}
 	first = *h;
 	second = (*h)->next;
